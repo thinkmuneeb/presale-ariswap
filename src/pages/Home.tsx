@@ -1,10 +1,19 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
+import styled from "styled-components";
 import COVER from "../assets/cover.jpg";
 import Button from "../components/Button";
 
+const Page = styled.div`
+  color: #fff;
+  position: relative;
+  z-index: 1;
+  background-color: ${({ theme }) => theme.background} !important;
+  min-height: 100vh;
+`;
+
 const Home = () => (
-  <div>
+  <Page>
     <div className="container container-fluid container-sm">
       <div className="text-right py-3">
         <Button onClick={() => {}} text="Connect" /> 
@@ -36,9 +45,15 @@ const Home = () => (
             </div>
           </Col>
         </Row>
+        <div className="py-5">
+            Bottom Section
+        </div>
+        <div className="py-5">
+            <small>COPYRIGHT © 2021 AMERIBUCKS PRESALE.</small>
+        </div>
       </div>
     </div>
-  </div>
+  </Page>
 );
 
 export default Home;
