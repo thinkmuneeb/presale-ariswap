@@ -1,11 +1,13 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
 import COVER from "../assets/cover.jpg";
+import Button from "../components/Button";
+
 const Home = () => (
   <div>
     <div className="container container-fluid container-sm">
       <div className="text-right py-3">
-        <button onClick={() => {}}>Connect</button>
+        <Button onClick={() => {}} text="Connect" /> 
       </div>
       <div className="mt-5">
         <Row>
