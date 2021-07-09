@@ -1,29 +1,37 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { ThemeProvider } from "styled-components";
+import { Provider } from "react-redux";
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { ThemeProvider } from "styled-components";
+import store from "./redux/store";
 
 // Define what props.theme will look like
 const theme = {
   text: {
     primary: "#ffffff",
-    secondary: "",
-    tertiary: "",
+    secondary: "#b9d2f4",
+    tertiary: "#FBAE2A",
+    quaternary: "#8ca2e5",
+    quinary: "#415076",
   },
   button: {
     text: "#2c0243",
     background: "linear-gradient(90deg, #fce21d 0%, #f9820b 100%)",
   },
   background: "#29013e",
+  darkNav: "#08103b",
+  inputBackground: "#7303b0",
 };
 
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      <App />
+      <Provider store={store}>
+        <App />
+      </Provider>
     </ThemeProvider>
   </React.StrictMode>,
   document.getElementById("root")

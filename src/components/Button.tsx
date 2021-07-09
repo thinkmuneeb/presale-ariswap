@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { device } from "../styles/device";
 
 const StyledButton = styled.button`
   background: ${(props) => props.theme.button.background};
@@ -10,8 +11,9 @@ const StyledButton = styled.button`
   letter-spacing: 0.1em;
   padding: 0.75rem 1.8rem;
   border-radius: 8px;
-  min-width: 140px;
-  max-width: 100%;
+  width: 100%;
+  /* min-width: 140px;
+  max-width: 100%; */
   border-style: none;
   text-align: center;
   white-space: nowrap;
@@ -29,6 +31,12 @@ const StyledButton = styled.button`
     to {
       opacity: 1;
     }
+  }
+  @media ${device.laptop} {
+    /* max-width: 800px; */
+  }
+  @media ${device.desktop} {
+    /* max-width: 1400px; */
   }
   &:hover {
     color: #fff;
