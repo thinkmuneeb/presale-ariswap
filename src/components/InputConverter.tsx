@@ -147,7 +147,7 @@ const InputConverter = () => {
             type='number'
             id='quantity'
             name='converter'
-            placeholder='AMERIBUCKS Amount'
+            placeholder='ARI Amount'
             value={num ? num * 11000 : ""}
             min='-100'
             max='100'
