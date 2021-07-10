@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
-import Icon from "../assets/AB logo transparent.png";
+import Icon from "../assets/logo.png";
 
 const Page = styled.div`
   color: #fff;
@@ -60,8 +60,8 @@ const Page = styled.div`
     position: relative;
     left: 50%;
     top: 50%;
-    width: 90px;
-    height: 90px;
+    width: 100px;
+    height: 100px;
     margin: -35px 0 0 -35px;
     z-index: 1001;
   }

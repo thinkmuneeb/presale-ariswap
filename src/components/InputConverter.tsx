@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
 import Icon from "../assets/coin_bnb.png";
-import IconLogo from "../assets/transparent-logo.png";
+import IconLogo from "../assets/logo.png";
 
 const SecondText = styled.p`
   font-size: 1.3rem;

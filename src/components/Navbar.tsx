@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 import Button from "../components/Button";
-import Icon from "../assets/logo-text.png";
+import Icon from "../assets/logo.png";
 import ConnectModal from "./Modal/ConnectModal";
 
 const Nav = styled.div`
