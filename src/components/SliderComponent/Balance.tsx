@@ -41,7 +41,6 @@ const Balance = () => {
   useEffect(() => {
     if (isVisible) {
       setVisible(isVisible);
-      console.log(isVisible);
     }
   }, [isVisible]);
   return (
