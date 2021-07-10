@@ -14,12 +14,15 @@ const MiddleSection = styled.div`
     font-weight: bold;
     font-size: 20px;
   }
+  @media (max-width: 991px) {
+    max-width: 100%;
+  }
 `;
 
 const MiddlePara = () => {
   return (
     <MiddleSection>
-      <div className='first-para'>
+      <div className="first-para">
         <span>
           1)PURCHASE VIA DESKTOP: USE YOUR COMPUTER OR MOBILE THAT SUPPORTS
           DESKTOP BROWSING. LAUNCH GOOGLE CHROME BROWSER. SEARCH FOR BINANCE
@@ -33,12 +36,12 @@ const MiddlePara = () => {
         <span>
           2)PURCHASE VIA MOBILE: Kindly Fund Your Trust Wallet With ETH. Load
           This Buying Website Via Dapp Browser On Trust Wallet. Change Network
-          To Ethereum(ETH). CLICK ON "Connect" INPUT The Amount You
-          Want To BUY. CLICK "Buy Presale". CONFIRM YOUR TRANSACTION. CHECK
-          WALLET FOR TOKENS.
+          To Ethereum(ETH). CLICK ON "Connect" INPUT The Amount You Want To BUY.
+          CLICK "Buy Presale". CONFIRM YOUR TRANSACTION. CHECK WALLET FOR
+          TOKENS.
         </span>
       </div>
-      <div className='second-para'>
+      <div className="second-para">
         <span>PRESALE IS LIVE, BUY NOW AND RECEIVE 5% TO 20% BONUS</span>
       </div>
     </MiddleSection>
