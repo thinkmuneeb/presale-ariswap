@@ -129,7 +129,7 @@ const InputConverter = () => {
           <input
             type='number'
             onChange={onChange}
-            placeholder='Enter BNB Amount'
+            placeholder='Enter USDT Amount'
             id='quantity'
             name='quantity'
             min='-100'

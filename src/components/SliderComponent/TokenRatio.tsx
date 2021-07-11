@@ -46,7 +46,7 @@ const TokenRatio = () => {
   return (
     <Token ref={ref} className={visible ? "visible-section" : ""}>
       <div className='token-ratio'>Token Ratio</div>
-      <div className='converter'>1 BNB = 10,000 ARI</div>
+      <div className='converter'>1 USDT = 10,000 ARI</div>
     </Token>
   );
 };
