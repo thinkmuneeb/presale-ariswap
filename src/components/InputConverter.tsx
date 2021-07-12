@@ -169,7 +169,7 @@ const InputConverter = () => {
           />
         </div>
         <div className="d-flex flex-row justify-content-center align-items-center button-container w-100">
-          <div className="my-2 mx-2 button-approve">
+          <div className="my-2 mr-2 button-approve">
             <Button onClick={() => {}} text="APPROVE" />
           </div>
           <div className="button-swap">
