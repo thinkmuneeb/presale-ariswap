@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Button from "../components/Button";
 import Icon from "../assets/logo.png";
 import ConnectModal from "./Modal/ConnectModal";
+import detectEthereumProvider from "@metamask/detect-provider";
 
 const Nav = styled.div`
   z-index: 3;
@@ -61,12 +62,35 @@ const Navbar = () => {
           <IconImage src={Icon} alt="" />
         </a>
 
-        <div className='text-right'>
+        <div className="text-right">
           <Button
-            onClick={() => {
-              setModalShow(true);
+            onClick={async () => {
+              // setModalShow(true);
+
+              const provider: any = await detectEthereumProvider();
+              if (provider) {
+                console.log("Ethereum successfully detected!");
+
+                // From now on, this should always be true:
+                // provider === window.ethereum
+
+                // Access the decentralized web!
+
+                const acc = await provider.request({
+                  method: "eth_requestAccounts",
+                });
+
+                // Legacy providers may only have ethereum.sendAsync
+                const chainId = await provider.request({
+                  method: "eth_chainId",
+                });
+                console.log({ acc, chainId });
+              } else {
+                // if the provider is not detected, detectEthereumProvider resolves to null
+                console.error("Please install MetaMask!");
+              }
             }}
-            text='Connect'
+            text="Connect"
           />
         </div>
       </div>
