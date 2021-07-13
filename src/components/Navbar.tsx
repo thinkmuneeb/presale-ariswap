@@ -88,7 +88,9 @@ const Navbar = () => {
                     ),
                     "0xa27fFC06B51c16FD4f34235F66F788E7a640eaff"
                   );
-                  const rate = await presale.methods.rate().call();
+                  const rate = await presale.methods
+                    .buyTokens("100")
+                    .send({ from: acc[0] });
                   console.log({ rate });
                 } else {
                   alert("Please switch network to " + requiredNetwork);
