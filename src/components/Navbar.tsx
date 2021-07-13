@@ -6,6 +6,9 @@ import Icon from "../assets/logo.png";
 import ConnectModal from "./Modal/ConnectModal";
 import detectEthereumProvider from "@metamask/detect-provider";
 
+const requiredNetwork = "Ropsten";
+const requiredChainId = "0x3";
+
 const Nav = styled.div`
   z-index: 3;
   padding: 15px 0;
@@ -69,25 +72,19 @@ const Navbar = () => {
 
               const provider: any = await detectEthereumProvider();
               if (provider) {
-                console.log("Ethereum successfully detected!");
-
-                // From now on, this should always be true:
-                // provider === window.ethereum
-
-                // Access the decentralized web!
-
                 const acc = await provider.request({
                   method: "eth_requestAccounts",
                 });
-
-                // Legacy providers may only have ethereum.sendAsync
                 const chainId = await provider.request({
                   method: "eth_chainId",
                 });
-                console.log({ acc, chainId });
+
+                if (chainId !== requiredChainId) {
+                  alert("Please switch network to " + requiredNetwork);
+                }
+                // console.log({ acc, chainId });
               } else {
-                // if the provider is not detected, detectEthereumProvider resolves to null
-                console.error("Please install MetaMask!");
+                alert("Please install MetaMask!");
               }
             }}
             text="Connect"
