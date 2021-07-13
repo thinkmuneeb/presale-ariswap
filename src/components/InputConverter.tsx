@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
-import Icon from "../assets/coin_bnb.png";
+import Icon from "../assets/coin_usdt.png";
 import IconLogo from "../assets/logo.png";
 import Button from "./Button";
 
@@ -147,8 +147,7 @@ const InputConverter = () => {
             placeholder="Enter USDT Amount"
             id="quantity"
             name="quantity"
-            min="-100"
-            max="100"
+            min="0"
           />
         </div>
         <div className="icon-arrow">
@@ -170,10 +169,8 @@ const InputConverter = () => {
         </div>
         <div className="d-flex flex-row justify-content-center align-items-center button-container w-100">
           <div className="my-2 mr-2 button-approve">
-            <Button onClick={() => {}} text="APPROVE" />
-          </div>
-          <div className="button-swap">
-            <Button onClick={() => {}} text="SWAP" />
+            {false && <Button onClick={() => {}} text="APPROVE" />}
+            {<Button onClick={() => {}} text="SWAP" />}
           </div>
         </div>
       </Converter>
