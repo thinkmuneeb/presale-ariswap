@@ -5,6 +5,7 @@ import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
 import Icon from "../assets/coin_bnb.png";
 import IconLogo from "../assets/logo.png";
+import Button from "./Button";
 
 const SecondText = styled.p`
   font-size: 1.3rem;
@@ -106,6 +107,20 @@ const Converter = styled.div`
       width: 100%;
     }
   }
+  .button-container {
+    .button-approve {
+      width: 25%;
+      @media (max-width: 991px) {
+        width: 100%;
+      }
+    }
+    .button-swap {
+      width: 25%;
+      @media (max-width: 991px) {
+        width: 100%;
+      }
+    }
+  }
 `;
 
 const IconImage = styled.img`
@@ -121,37 +136,45 @@ const InputConverter = () => {
   };
 
   return (
-    <div className='mb-5'>
+    <div className="mb-5">
       <SecondText>BUY AMERIBUCKS TOKENS WITH USDT</SecondText>
       <Converter>
-        <div className='user-input'>
-          <IconImage src={Icon} alt='' />
+        <div className="user-input">
+          <IconImage src={Icon} alt="" />
           <input
-            type='number'
+            type="number"
             onChange={onChange}
-            placeholder='Enter USDT Amount'
-            id='quantity'
-            name='quantity'
-            min='-100'
-            max='100'
+            placeholder="Enter USDT Amount"
+            id="quantity"
+            name="quantity"
+            min="-100"
+            max="100"
           />
         </div>
-        <div className='icon-arrow'>
+        <div className="icon-arrow">
           <FontAwesomeIcon icon={faChevronRight} />
         </div>
 
-        <div className='converter-input'>
-          <IconImage src={IconLogo} alt='' />
+        <div className="converter-input">
+          <IconImage src={IconLogo} alt="" />
           <input
             readOnly
-            type='number'
-            id='quantity'
-            name='converter'
-            placeholder='ARI Amount'
+            type="number"
+            id="quantity"
+            name="converter"
+            placeholder="ARI Amount"
             value={num ? num * 11000 : ""}
-            min='-100'
-            max='100'
+            min="-100"
+            max="100"
           />
+        </div>
+        <div className="d-flex flex-row justify-content-center align-items-center button-container w-100">
+          <div className="my-2 mr-2 button-approve">
+            <Button onClick={() => {}} text="APPROVE" />
+          </div>
+          <div className="button-swap">
+            <Button onClick={() => {}} text="SWAP" />
+          </div>
         </div>
       </Converter>
     </div>
