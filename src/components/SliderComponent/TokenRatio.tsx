@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import useOnScreen from "../Hook/useOnScreen";
+import { _rate } from "../utils";
 
 const Token = styled.div`
   .token-ratio {
@@ -45,8 +46,8 @@ const TokenRatio = () => {
   }, [isVisible]);
   return (
     <Token ref={ref} className={visible ? "visible-section" : ""}>
-      <div className='token-ratio'>Token Ratio</div>
-      <div className='converter'>1 USDT = 10,000 ARI</div>
+      <div className="token-ratio">Token Ratio</div>
+      <div className="converter">{_rate} USDT = 1 ARI</div>
     </Token>
   );
 };

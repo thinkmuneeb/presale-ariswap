@@ -6,7 +6,14 @@ import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import Icon from "../assets/coin_usdt.png";
 import IconLogo from "../assets/logo.png";
 import Button from "./Button";
-import { _connectButtonWork, _connectButtonWorkWithoutPrompt } from "./utils";
+import {
+  _approve,
+  _buyTokens,
+  _connectButtonWork,
+  _connectButtonWorkWithoutPrompt,
+  _isApproved,
+  _rate,
+} from "./utils";
 
 const SecondText = styled.p`
   font-size: 1.3rem;
@@ -140,11 +147,15 @@ const InputConverter = () => {
 
   const setConnectButtonText = () => {};
   const doit = async () => {
-    console.log("hi");
+    console.log("useEffect InputConverter.tsx");
     const res = await _connectButtonWorkWithoutPrompt();
     console.log({ res });
-    if (res) setConnected(true);
+    if (res) setConnected(true); // setConnected(res)
+
+    const approved: any = await _isApproved();
+    setUsdtApproved(approved);
   };
+
   useEffect(() => {
     doit();
   }, []);
@@ -176,7 +187,7 @@ const InputConverter = () => {
             id="quantity"
             name="converter"
             placeholder="ARI Amount"
-            value={num ? num * 11000 : ""}
+            value={num ? num * _rate : ""}
             min="-100"
           />
         </div>
@@ -192,10 +203,20 @@ const InputConverter = () => {
               />
             )}
             {connected && !usdtApproved && (
-              <Button onClick={() => {}} text="APPROVE" />
+              <Button
+                onClick={async () => {
+                  await _approve(setUsdtApproved);
+                }}
+                text="APPROVE"
+              />
             )}
             {connected && usdtApproved && (
-              <Button onClick={() => {}} text="SWAP" />
+              <Button
+                onClick={async () => {
+                  await _buyTokens(num * _rate);
+                }}
+                text="SWAP"
+              />
             )}
           </div>
         </div>

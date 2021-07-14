@@ -34,6 +34,7 @@ const BalanceStyle = styled.div`
 
 const Balance = () => {
   const [visible, setVisible] = useState(false);
+  const [balance, setBalance] = useState<number>(0);
 
   const ref = useRef<any>();
   const isVisible = useOnScreen(ref);
@@ -45,8 +46,8 @@ const Balance = () => {
   }, [isVisible]);
   return (
     <BalanceStyle ref={ref} className={visible ? "visible-section" : ""}>
-      <div className='balance'>Your Balance</div>
-      <div className='value'>0</div>
+      {/* <div className='balance'>Your Balance</div>
+      <div className='value'>0</div> */}
     </BalanceStyle>
   );
 };
