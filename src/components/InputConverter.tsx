@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
@@ -6,6 +6,7 @@ import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import Icon from "../assets/coin_usdt.png";
 import IconLogo from "../assets/logo.png";
 import Button from "./Button";
+import { _connectButtonWork, _connectButtonWorkWithoutPrompt } from "./utils";
 
 const SecondText = styled.p`
   font-size: 1.3rem;
@@ -129,11 +130,24 @@ const IconImage = styled.img`
 `;
 
 const InputConverter = () => {
-  const [num, setNum] = useState<number>();
+  const [num, setNum] = useState<number>(0);
+  const [usdtApproved, setUsdtApproved] = useState<boolean>(false);
+  const [connected, setConnected] = useState<boolean>(false);
 
   const onChange = (e: any) => {
     setNum(e.currentTarget.value);
   };
+
+  const setConnectButtonText = () => {};
+  const doit = async () => {
+    console.log("hi");
+    const res = await _connectButtonWorkWithoutPrompt();
+    console.log({ res });
+    if (res) setConnected(true);
+  };
+  useEffect(() => {
+    doit();
+  }, []);
 
   return (
     <div className="mb-5">
@@ -164,13 +178,25 @@ const InputConverter = () => {
             placeholder="ARI Amount"
             value={num ? num * 11000 : ""}
             min="-100"
-            max="100"
           />
         </div>
         <div className="d-flex flex-row justify-content-center align-items-center button-container w-100">
           <div className="my-2 mr-2 button-approve">
-            {false && <Button onClick={() => {}} text="APPROVE" />}
-            {<Button onClick={() => {}} text="SWAP" />}
+            {!connected && (
+              <Button
+                onClick={async () => {
+                  await _connectButtonWork(setConnectButtonText);
+                  setConnected(true);
+                }}
+                text="CONNECT"
+              />
+            )}
+            {connected && !usdtApproved && (
+              <Button onClick={() => {}} text="APPROVE" />
+            )}
+            {connected && usdtApproved && (
+              <Button onClick={() => {}} text="SWAP" />
+            )}
           </div>
         </div>
       </Converter>

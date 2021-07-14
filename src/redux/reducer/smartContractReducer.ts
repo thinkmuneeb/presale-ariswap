@@ -42,7 +42,7 @@ export const {
 export const onSmartContractLoad =
   ({ param1, param2 }: any) =>
   (dispatch: any) => {
-    console.log(param1, param2);
+    // console.log(param1, param2);
     dispatch(smartContactLoadBegin());
     setTimeout(() => {
       dispatch(smartContactLoadSuccess({ contract: { info: "dummy" } }));
