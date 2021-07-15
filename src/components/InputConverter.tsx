@@ -71,6 +71,15 @@ const Converter = styled.div`
     width: 170px;
   }
 
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[name="converter"] {
+    pointer-events: none;
+  }
+
   input:focus {
     outline: none;
   }
@@ -102,15 +111,6 @@ const Converter = styled.div`
     height: 45px;
     background-color: ${({ theme }) => theme.inputBackground} !important;
     border-radius: 6px;
-
-    input[type="number"]::-webkit-inner-spin-button,
-    input[type="number"]::-webkit-outer-spin-button {
-      -webkit-appearance: none;
-      margin: 0;
-    }
-    input[name="converter"] {
-      pointer-events: none;
-    }
     @media (max-width: 991px) {
       width: 100%;
     }
@@ -192,7 +192,7 @@ const InputConverter = () => {
           />
         </div>
         <div className="d-flex flex-row justify-content-center align-items-center button-container w-100">
-          <div className="my-2 mr-2 button-approve">
+          <div className="my-2 button-approve">
             {!connected && (
               <Button
                 onClick={async () => {
