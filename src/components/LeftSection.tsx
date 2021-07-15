@@ -7,8 +7,10 @@ import CountdownTimer from "./CountdownTimer";
 
 const Section = styled.div`
   max-width: 515px;
-  margin-left: auto;
   margin-right: auto;
+  @media (max-width: 991px) {
+    margin-left: auto;
+  }
 `;
 
 const LeftSection = () => {
@@ -17,7 +19,7 @@ const LeftSection = () => {
       <Title />
       <InputConverter />
       <MiddlePara />
-      <div className="py-2"> 
+      <div className="py-2">
         <CountdownTimer eventDate={Date.now() + 500000000} />
       </div>
     </Section>

@@ -13,6 +13,9 @@ import TokenRatio from "../components/SliderComponent/TokenRatio";
 import Footer from "../components/Footer";
 
 const Page = styled.div`
+  .content {
+    padding-top: 100px;
+  }
   color: #fff;
   position: relative;
   z-index: 1;
@@ -82,7 +85,7 @@ const Home = () => {
     <Page>
       <Navbar />
       <div className="container container-fluid container-sm  pt-2">
-        <div className="mt-5">
+        <div className="mt-5 content">
           <Row>
             <Col
               lg={{
