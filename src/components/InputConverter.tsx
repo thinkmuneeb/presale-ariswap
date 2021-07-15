@@ -66,7 +66,7 @@ const Converter = styled.div`
     color: ${({ theme }) => theme.text.primary} !important;
     border: none;
     padding: 10px 15px;
-    text-align: center;
+    text-align: right;
     font-size: 15px;
     width: 170px;
   }
