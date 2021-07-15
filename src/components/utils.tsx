@@ -2,14 +2,14 @@ import detectEthereumProvider from "@metamask/detect-provider";
 import Web3 from "web3";
 
 export const _rate = 0.3; // rate to buy tokens
-const requiredNetwork = "Ropsten";
-const requiredChainId = "0x3";
+const requiredNetwork = "Rinkeby";
+const requiredChainId = "0x4";
 const MAX_INT =
   "0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff";
 
-const presaleAddress = "0xa27fFC06B51c16FD4f34235F66F788E7a640eaff";
-const usdtAddress = "0x5573ef0204a1391cD1c4Fd2f2062E1b264492946";
-const tokenAddress = "0xDe2dA7D1128A20F55cb270604F37C2c20480ECc4";
+const presaleAddress = "0x3129f085Bb236565089dfC1DA56F0A582557db9e";
+const usdtAddress = "0x81223F51D0f9AAE605f0ea6DF6531Fe52Be75886";
+const tokenAddress = "0x3b1d9688da3BbddeacC78eE86cE1317E1dCc9908";
 
 const presaleAbi = JSON.parse(
   '[{"inputs":[{"internalType":"contract IERC20","name":"_token","type":"address"},{"internalType":"contract IERC20","name":"_usdt","type":"address"}],"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"previousOwner","type":"address"},{"indexed":true,"internalType":"address","name":"newOwner","type":"address"}],"name":"OwnershipTransferred","type":"event"},{"inputs":[{"internalType":"uint256","name":"_tokens","type":"uint256"}],"name":"buyTokens","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"contract IERC20","name":"_token","type":"address"},{"internalType":"uint256","name":"_amount","type":"uint256"}],"name":"getTokens","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"owner","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"rate","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"renounceOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_rate","type":"uint256"}],"name":"setRate","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"token","outputs":[{"internalType":"contract IERC20","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"tokensSold","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"usdt","outputs":[{"internalType":"contract IERC20","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"wallet","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"}]'
