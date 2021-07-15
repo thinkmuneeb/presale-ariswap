@@ -192,7 +192,7 @@ const InputConverter = () => {
           />
         </div>
         <div className="d-flex flex-row justify-content-center align-items-center button-container w-100">
-          <div className="my-2 button-approve">
+          <div className="my-3 button-approve">
             {!connected && (
               <Button
                 onClick={async () => {

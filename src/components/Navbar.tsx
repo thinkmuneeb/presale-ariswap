@@ -9,13 +9,14 @@ import ConnectModal from "./Modal/ConnectModal";
 const Nav = styled.div`
   z-index: 3;
   padding: 15px 0;
+  position: fixed;
   transition-duration: 0.4s;
+  position: fixed;
+  top: 0;
+  width: 100%;
   &.sticky {
     background-color: ${({ theme }) => theme.darkNav} !important;
     transition-duration: 0.5s;
-    position: fixed;
-    top: 0;
-    width: 100%;
   }
   .nav-inside {
     display: flex;
@@ -57,7 +58,7 @@ const Navbar = () => {
   });
 
   return (
-    <Nav className={height > 0 ? "sticky" : ""}>
+    <Nav className={height > 45 ? "sticky" : ""}>
       <div className="nav-inside container container-fluid container-sm">
         <a href="./" className="text-left">
           <IconImage src={Icon} alt="" />
