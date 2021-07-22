@@ -3,7 +3,10 @@ import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
 import { useEffect, useRef, useState } from "react";
 import useOnScreen from "../Hook/useOnScreen";
+import Web3 from "web3";
+import { presaleAbi, presaleAddress } from "../utils";
 
+const toWei = Web3.utils.toWei;
 const SliderDesign = styled.div`
   .label {
     font-size: 12px;
@@ -60,12 +63,28 @@ const SliderBar = () => {
   const minValue = 667340.4889025;
   const maxValue = 20000000;
   const [visible, setVisible] = useState(false);
+  const [tokensSold, setTokensSold] = useState<number>(-1);
 
   const ref = useRef<any>();
   const isVisible = useOnScreen(ref);
 
+  const seeTokensSold = async () => {
+    const Web3WsProvider = require("web3-providers-ws");
+    const provider = new Web3WsProvider(
+      "wss://mainnet.infura.io/ws/v3/8165c77d80d441ab86e573b151f62b8d"
+    );
+
+    const web = new Web3(provider);
+    const presale = new web.eth.Contract(presaleAbi, presaleAddress);
+    const tokensSold = toWei(
+      (await presale.methods.tokensSold().call()).toString()
+    );
+    setTokensSold(Number(tokensSold));
+    console.log("Number(tokensSold): ", Number(tokensSold));
+    console.log("tokensSold: ", tokensSold);
+  };
   useEffect(() => {
-    
+    seeTokensSold();
   }, []);
   useEffect(() => {
     if (isVisible) {
@@ -80,7 +99,9 @@ const SliderBar = () => {
           {/* https://mainnet.infura.io/v3/a30ce8978acb4d7da82e6d7e6b71afb7
            */}
           <span className="label">Sold -</span>{" "}
-          <span className="digit">667340.4889025 Tokens</span>
+          <span className="digit">
+            {tokensSold === -1 ? "Loading..." : tokensSold} Tokens
+          </span>
         </div>
 
         <div className="target">
@@ -89,7 +110,12 @@ const SliderBar = () => {
         </div>
       </div>{" "}
       <div className="slide-style pt-5">
-        <Slider min={0} max={maxValue} defaultValue={minValue} disabled />
+        <Slider
+          min={tokensSold === -1 ? 0 : tokensSold}
+          max={maxValue}
+          defaultValue={minValue}
+          disabled
+        />
       </div>
     </SliderDesign>
   );
