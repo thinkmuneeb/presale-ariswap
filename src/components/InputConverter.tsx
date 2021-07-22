@@ -149,7 +149,6 @@ const InputConverter = () => {
   const doit = async () => {
     console.log("useEffect InputConverter.tsx");
     const res = await _connectButtonWorkWithoutPrompt();
-    console.log({ res });
     if (res) setConnected(true); // setConnected(res)
 
     const approved: any = await _isApproved();

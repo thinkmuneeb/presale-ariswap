@@ -1,5 +1,10 @@
+22-July-21:
+Deployed to ETH Mainnet:
+Presale https://etherscan.io/address/0x7b58c75cb67030221720e0b92c8b658164079add#code
+ARI Token https://etherscan.io/address/0x31dfd905c9162f172c711cab91f6d580a088ae6f
+
 
 14-July-21:
-USDT  https://ropsten.etherscan.io/address/0x5573ef0204a1391cD1c4Fd2f2062E1b264492946#contracts
-ARI  https://ropsten.etherscan.io/address/0xDe2dA7D1128A20F55cb270604F37C2c20480ECc4#contracts
 Presale https://ropsten.etherscan.io/address/0xa27fFC06B51c16FD4f34235F66F788E7a640eaff#contracts
+ARI  https://ropsten.etherscan.io/address/0xDe2dA7D1128A20F55cb270604F37C2c20480ECc4#contracts
+USDT  https://ropsten.etherscan.io/address/0x5573ef0204a1391cD1c4Fd2f2062E1b264492946#contracts
