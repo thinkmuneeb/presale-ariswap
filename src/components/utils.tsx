@@ -6,7 +6,7 @@ const requiredChainId = "0x1";
 
 const presaleAddress = "0x7b58c75cb67030221720e0b92c8b658164079add";
 const usdtAddress = "0xdac17f958d2ee523a2206206994597c13d831ec7";
-const tokenAddress = "0x31dfd905c9162f172c711cab91f6d580a088ae6f";
+// const tokenAddress = "0x31dfd905c9162f172c711cab91f6d580a088ae6f";
 
 // const requiredNetwork = "Rinkeby";
 // const requiredChainId = "0x4";

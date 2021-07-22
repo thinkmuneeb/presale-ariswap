@@ -65,6 +65,9 @@ const SliderBar = () => {
   const isVisible = useOnScreen(ref);
 
   useEffect(() => {
+    
+  }, []);
+  useEffect(() => {
     if (isVisible) {
       setVisible(isVisible);
     }
@@ -72,18 +75,20 @@ const SliderBar = () => {
 
   return (
     <SliderDesign ref={ref} className={visible ? "visible-section" : ""}>
-      <div className='d-flex justify-content-between'>
-        <div className='sold'>
-          <span className='label'>Sold -</span>{" "}
-          <span className='digit'>667340.4889025 Tokens</span>
+      <div className="d-flex justify-content-between">
+        <div className="sold">
+          {/* https://mainnet.infura.io/v3/a30ce8978acb4d7da82e6d7e6b71afb7
+           */}
+          <span className="label">Sold -</span>{" "}
+          <span className="digit">667340.4889025 Tokens</span>
         </div>
 
-        <div className='target'>
-          <span className='label'>TARGET -</span>{" "}
-          <span className='digit'>20,000,000 Tokens</span>
+        <div className="target">
+          <span className="label">TARGET -</span>{" "}
+          <span className="digit">20,000,000 Tokens</span>
         </div>
       </div>{" "}
-      <div className='slide-style pt-5'>
+      <div className="slide-style pt-5">
         <Slider min={0} max={maxValue} defaultValue={minValue} disabled />
       </div>
     </SliderDesign>

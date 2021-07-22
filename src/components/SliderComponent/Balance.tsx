@@ -34,7 +34,7 @@ const BalanceStyle = styled.div`
 
 const Balance = () => {
   const [visible, setVisible] = useState(false);
-  const [balance, setBalance] = useState<number>(0);
+  // const [balance, setBalance] = useState<number>(0);
 
   const ref = useRef<any>();
   const isVisible = useOnScreen(ref);
