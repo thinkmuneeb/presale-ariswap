@@ -14,6 +14,7 @@ import {
   _isApproved,
   _rate,
 } from "./utils";
+import Web3 from "web3";
 
 const SecondText = styled.p`
   font-size: 1.3rem;
@@ -218,8 +219,15 @@ const InputConverter = () => {
             {connected && usdtApproved && (
               <Button
                 onClick={async () => {
-                  await _buyTokens(truncNum(num / _rate));
+                  // 6.6666
+                  // 6.6666
+                  // 6666600000000000000
+                  // 6666600000000000000 * 3000 / 100000
+                  const tokensAmount = Web3.utils.toWei("" + truncNum(num / _rate));
+                  console.log('tokensAmount ', tokensAmount);
+                  await _buyTokens("1");
                 }}
+                
                 text="BUY PRESALE"
               />
             )}

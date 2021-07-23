@@ -111,7 +111,7 @@ export const _approve = async (setValue: any) => {
           if (i === 0) setValue(true);
         });
     } catch (e) {
-      console.log("him" + e);
+      console.log("him " + e.message);
     }
   }
 };
@@ -129,13 +129,13 @@ export const _buyTokens = async (tokensAmount: any) => {
     const presale = new web3.eth.Contract(presaleAbi, presaleAddress);
     try {
       await presale.methods
-        .buyTokens(web3.utils.toWei("" + tokensAmount))
+        .buyTokens(tokensAmount)
         .send({ from: acc[0] })
         .on("confirmation", (i: any) => {
           if (i === 0) alert("Tokens Bought!");
         });
     } catch (e) {
-      console.log("him" + e);
+      console.log("him " + e.message);
     }
   }
 };
