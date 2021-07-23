@@ -25,17 +25,15 @@ const MiddlePara = () => {
       <div className="first-para">
         <span>
           1)PURCHASE VIA DESKTOP: USE YOUR COMPUTER OR MOBILE THAT SUPPORTS
-          DESKTOP BROWSING. LAUNCH GOOGLE CHROME BROWSER. SEARCH FOR BINANCE
-          SMART CHAIN extension. LINK BINANCE SMART FUND WALLET WITH BINANCE
-          SMART CHAIN (ETH). CLICK ON "Connect" INPUT The Amount You Want To
-          BUY. CLICK "Buy Presale". CONFIRM YOUR TRANSACTION. CHECK WALLET FOR
-          TOKENS.
+          DESKTOP BROWSING. LAUNCH GOOGLE CHROME BROWSER. SEARCH FOR METAMASK extension.
+          CLICK ON "Connect" INPUT The Amount You Want To BUY. CLICK "Buy Presale".
+          CONFIRM YOUR TRANSACTION. CHECK WALLET FOR TOKENS.
         </span>
         <br />
         <br />
         <span>
-          2)PURCHASE VIA MOBILE: Kindly Fund Your Trust Wallet With ETH. Load
-          This Buying Website Via Dapp Browser On Trust Wallet. Change Network
+          2)PURCHASE VIA MOBILE: Kindly Fund Your METAMASK Wallet With ETH. Load
+          This Buying Website Via Dapp Browser On Metamask Wallet. Change Network
           To Ethereum(ETH). CLICK ON "Connect" INPUT The Amount You Want To BUY.
           CLICK "Buy Presale". CONFIRM YOUR TRANSACTION. CHECK WALLET FOR
           TOKENS.

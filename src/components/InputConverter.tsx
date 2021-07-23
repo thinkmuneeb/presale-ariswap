@@ -117,8 +117,8 @@ const Converter = styled.div`
   }
   .button-container {
     .button-approve {
-      width: 25%;
-      @media (max-width: 991px) {
+      width: 40%;
+      @media (max-width: 1020px) {
         width: 100%;
       }
     }
@@ -206,7 +206,7 @@ const InputConverter = () => {
                 onClick={async () => {
                   await _approve(setUsdtApproved);
                 }}
-                text="APPROVE"
+                text="APPROVE PRESALE"
               />
             )}
             {connected && usdtApproved && (
@@ -214,7 +214,7 @@ const InputConverter = () => {
                 onClick={async () => {
                   await _buyTokens(num * _rate);
                 }}
-                text="SWAP"
+                text="BUY PRESALE"
               />
             )}
           </div>

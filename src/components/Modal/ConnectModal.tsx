@@ -57,15 +57,6 @@ const ConnectModal = ({ show, onHide }: any) => {
           />
         </div>
 
-        <div className="second-btn">
-          <Button
-            onClick={() => {
-              alert("Please install Binance Smartchain Wallet");
-              onHide();
-            }}
-            text="Connect to Binance Smart Chain"
-          />
-        </div>
       </Modal.Body>
     </ModalStyle>
   );
