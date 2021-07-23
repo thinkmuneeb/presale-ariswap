@@ -136,6 +136,12 @@ const IconImage = styled.img`
   height: 30px;
 `;
 
+export const truncNum = (n: any) => {
+  const trNum = Number(Math.trunc(n * 10 ** 4) / 10 ** 4); // Round down to 2 fraction
+  // console.log("trNum", trNum);
+  return trNum;
+};
+
 const InputConverter = () => {
   const [num, setNum] = useState<number>(0);
   const [usdtApproved, setUsdtApproved] = useState<boolean>(false);
@@ -186,7 +192,7 @@ const InputConverter = () => {
             id="quantity"
             name="converter"
             placeholder="ARI Amount"
-            value={num ? num * _rate : ""}
+            value={num ? truncNum(num / _rate) : ""}
             min="-100"
           />
         </div>
@@ -212,7 +218,7 @@ const InputConverter = () => {
             {connected && usdtApproved && (
               <Button
                 onClick={async () => {
-                  await _buyTokens(num * _rate);
+                  await _buyTokens(truncNum(num / _rate));
                 }}
                 text="BUY PRESALE"
               />
