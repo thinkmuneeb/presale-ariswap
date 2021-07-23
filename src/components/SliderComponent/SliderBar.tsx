@@ -6,7 +6,7 @@ import useOnScreen from "../Hook/useOnScreen";
 import Web3 from "web3";
 import { presaleAbi, presaleAddress } from "../utils";
 
-const toWei = Web3.utils.toWei;
+const fromWei = Web3.utils.fromWei;
 const SliderDesign = styled.div`
   .label {
     font-size: 12px;
@@ -76,7 +76,7 @@ const SliderBar = () => {
 
     const web = new Web3(provider);
     const presale = new web.eth.Contract(presaleAbi, presaleAddress);
-    const tokensSold = toWei(
+    const tokensSold = fromWei(
       (await presale.methods.tokensSold().call()).toString()
     );
     setTokensSold(Number(tokensSold));
