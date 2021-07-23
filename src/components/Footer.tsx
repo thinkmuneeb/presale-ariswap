@@ -8,7 +8,7 @@ const FooterStyle = styled.div`
 `;
 
 const Footer = () => {
-  return <FooterStyle>COPYRIGHT © 2021 AMERIBUCKS PRESALE.</FooterStyle>;
+  return <FooterStyle>COPYRIGHT © 2021 ARISWAP PRESALE.</FooterStyle>;
 };
 
 export default Footer;

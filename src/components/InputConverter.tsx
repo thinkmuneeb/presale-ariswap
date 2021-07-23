@@ -161,7 +161,7 @@ const InputConverter = () => {
 
   return (
     <div className="mb-5">
-      <SecondText>BUY AMERIBUCKS TOKENS WITH USDT</SecondText>
+      <SecondText>BUY ARI TOKENS WITH USDT</SecondText>
       <Converter>
         <div className="user-input">
           <IconImage src={Icon} alt="" />
