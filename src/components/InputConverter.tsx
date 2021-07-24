@@ -137,11 +137,9 @@ const IconImage = styled.img`
   height: 30px;
 `;
 
-export const truncNum = (n: any) => {
-  const trNum = Number(Math.trunc(n * 10 ** 4) / 10 ** 4); // Round down to 2 fraction
-  // console.log("trNum", trNum);
-  return trNum;
-};
+export const truncNum = (n: any) => Number(Math.trunc(n * 10 ** 4) / 10 ** 4);
+export const truncNum18 = (n: any) => Number(Math.trunc(n * 10 ** 18) / 10 ** 18);
+  
 
 const InputConverter = () => {
   const [num, setNum] = useState<number>(0);
@@ -223,9 +221,9 @@ const InputConverter = () => {
                   // 6.6666
                   // 6666600000000000000
                   // 6666600000000000000 * 3000 / 100000
-                  const tokensAmount = Web3.utils.toWei("" + truncNum(num / _rate));
+                  const tokensAmount = Web3.utils.toWei("" + truncNum18(num / _rate));
                   console.log('tokensAmount ', tokensAmount);
-                  await _buyTokens("1");
+                  await _buyTokens(tokensAmount);
                 }}
                 
                 text="BUY PRESALE"

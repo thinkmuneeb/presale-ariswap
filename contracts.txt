@@ -1,3 +1,18 @@
+BSC Mainnet:
+ARI https://bscscan.com/address/0x9c5CC63E979D30B8d12eCd95df79b6c99A483ee6#code
+Presale https://bscscan.com/address/0xcd9C8172e228171170117c209DaDA585fea540Ca#code
+USDT https://bscscan.com/address/0x55d398326f99059ff775485246999027b3197955#code
+
+
+
+BSC Testnet:
+USDT https://testnet.bscscan.com/address/0xFee8edD4C9161677D331d00247AB5078704C77f2#contracts
+ARI  https://testnet.bscscan.com/address/0x94768F3bf6be71D8E2920491E7148C25F0614642#contracts
+Presale https://testnet.bscscan.com/address/0x4D141cC576004A8186f858Aa150dD130A0857d16#contracts
+
+
+
+
 22-July-21:
 Deployed to ETH Mainnet:
 Presale https://etherscan.io/address/0x7b58c75cb67030221720e0b92c8b658164079add#code
