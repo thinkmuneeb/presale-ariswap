@@ -4,7 +4,8 @@ import "rc-slider/assets/index.css";
 import { useEffect, useRef, useState } from "react";
 import useOnScreen from "../Hook/useOnScreen";
 import Web3 from "web3";
-import { presaleAbi, presaleAddress } from "../utils";
+import { presaleAbi, presaleAddress, web3WsProvider } from "../utils";
+import { truncNum2 } from "../InputConverter";
 
 const fromWei = Web3.utils.fromWei;
 const SliderDesign = styled.div`
@@ -60,8 +61,7 @@ const SliderDesign = styled.div`
 `;
 
 const SliderBar = () => {
-  const minValue = 667340.4889025;
-  const maxValue = 20000000;
+  
   const [visible, setVisible] = useState(false);
   const [tokensSold, setTokensSold] = useState<number>(-1);
 
@@ -70,9 +70,7 @@ const SliderBar = () => {
 
   const seeTokensSold = async () => {
     const Web3WsProvider = require("web3-providers-ws");
-    const provider = new Web3WsProvider(
-      "wss://mainnet.infura.io/ws/v3/8165c77d80d441ab86e573b151f62b8d"
-    );
+    const provider = new Web3WsProvider(web3WsProvider);
 
     const web = new Web3(provider);
     const presale = new web.eth.Contract(presaleAbi, presaleAddress);
@@ -100,7 +98,7 @@ const SliderBar = () => {
            */}
           <span className="label">Sold -</span>{" "}
           <span className="digit">
-            {tokensSold === -1 ? "Loading..." : tokensSold} Tokens
+            {tokensSold === -1 ? "Loading..." : truncNum2(tokensSold)} Tokens
           </span>
         </div>
 
@@ -111,9 +109,10 @@ const SliderBar = () => {
       </div>{" "}
       <div className="slide-style pt-5">
         <Slider
-          min={tokensSold === -1 ? 0 : tokensSold}
-          max={maxValue}
-          defaultValue={minValue}
+          min={0}
+          max={10}
+          defaultValue={tokensSold === -1 ? 0 : tokensSold}
+          // defaultValue={1.33111}
           disabled
         />
       </div>

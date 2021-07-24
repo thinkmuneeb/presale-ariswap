@@ -138,6 +138,7 @@ const IconImage = styled.img`
 `;
 
 export const truncNum = (n: any) => Number(Math.trunc(n * 10 ** 4) / 10 ** 4);
+export const truncNum2 = (n: any) => Number(Math.trunc(n * 10 ** 2) / 10 ** 2);
 export const truncNum18 = (n: any) => Number(Math.trunc(n * 10 ** 18) / 10 ** 18);
   
 

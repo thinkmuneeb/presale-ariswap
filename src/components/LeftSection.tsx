@@ -20,7 +20,7 @@ const LeftSection = () => {
       <InputConverter />
       <MiddlePara />
       <div className="py-2">
-        <CountdownTimer eventDate={new Date(2021, 6, 30, 18)} />
+        <CountdownTimer eventDate={new Date(2021, 6, 31, 22)} />
       </div>
     </Section>
   );
