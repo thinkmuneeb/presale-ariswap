@@ -5,7 +5,7 @@ const requiredNetwork = "BSC Mainnet";
 const requiredChainId = "0x38";
 export const presaleAddress = "0xcd9C8172e228171170117c209DaDA585fea540Ca";
 export const usdtAddress = "0x55d398326f99059fF775485246999027B3197955";
-export const web3WsProvider = "wss://bsc.getblock.io/mainnet/?api_key=80046263-8713-4c16-973c-5cb8efb4f2b1";
+export const web3Provider = "https://bsc-dataseed1.binance.org:443";
 // const tokenAddress = "0x9c5CC63E979D30B8d12eCd95df79b6c99A483ee6";
 
 // const requiredNetwork = "Bsc Testnet";

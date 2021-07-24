@@ -4,7 +4,7 @@ import "rc-slider/assets/index.css";
 import { useEffect, useRef, useState } from "react";
 import useOnScreen from "../Hook/useOnScreen";
 import Web3 from "web3";
-import { presaleAbi, presaleAddress, web3WsProvider } from "../utils";
+import { presaleAbi, presaleAddress, web3Provider } from "../utils";
 import { truncNum2 } from "../InputConverter";
 
 const fromWei = Web3.utils.fromWei;
@@ -61,7 +61,6 @@ const SliderDesign = styled.div`
 `;
 
 const SliderBar = () => {
-  
   const [visible, setVisible] = useState(false);
   const [tokensSold, setTokensSold] = useState<number>(-1);
 
@@ -69,11 +68,10 @@ const SliderBar = () => {
   const isVisible = useOnScreen(ref);
 
   const seeTokensSold = async () => {
-    const Web3WsProvider = require("web3-providers-ws");
-    const provider = new Web3WsProvider(web3WsProvider);
-
-    const web = new Web3(provider);
-    const presale = new web.eth.Contract(presaleAbi, presaleAddress);
+    const web3 = new Web3(web3Provider);
+    
+    // const web3 = new Web3(provider);
+    const presale = new web3.eth.Contract(presaleAbi, presaleAddress);
     const tokensSold = fromWei(
       (await presale.methods.tokensSold().call()).toString()
     );
