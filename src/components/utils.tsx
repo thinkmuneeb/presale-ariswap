@@ -1,17 +1,17 @@
 import detectEthereumProvider from "@metamask/detect-provider";
 import Web3 from "web3";
 
-// const requiredNetwork = "Ethereum Mainnet";
-// const requiredChainId = "0x1";
-// export const presaleAddress = "0x7b58c75cb67030221720e0b92c8b658164079add";
-// export const usdtAddress = "0xdac17f958d2ee523a2206206994597c13d831ec7";
-// // const tokenAddress = "0x31dfd905c9162f172c711cab91f6d580a088ae6f";
+const requiredNetwork = "BSC Mainnet";
+const requiredChainId = "0x38";
+export const presaleAddress = "0xcd9C8172e228171170117c209DaDA585fea540Ca";
+export const usdtAddress = "0x55d398326f99059fF775485246999027B3197955";
+// const tokenAddress = "0x9c5CC63E979D30B8d12eCd95df79b6c99A483ee6";
 
-const requiredNetwork = "Bsc Testnet";
-const requiredChainId = "0x61";
-export const presaleAddress = "0x4D141cC576004A8186f858Aa150dD130A0857d16";
-export const usdtAddress = "0xFee8edD4C9161677D331d00247AB5078704C77f2";
-// const tokenAddress = "0x94768F3bf6be71D8E2920491E7148C25F0614642";
+// const requiredNetwork = "Bsc Testnet";
+// const requiredChainId = "0x61";
+// export const presaleAddress = "0x4D141cC576004A8186f858Aa150dD130A0857d16";
+// export const usdtAddress = "0xFee8edD4C9161677D331d00247AB5078704C77f2";
+// // const tokenAddress = "0x94768F3bf6be71D8E2920491E7148C25F0614642";
 
 export const _rate = 0.3; // rate to buy tokens
 
